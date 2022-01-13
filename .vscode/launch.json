@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+  
+      {
+          "name": "Run-Cascade",
+          "type": "go",
+          "request": "launch",
+          "remotePath": "${workspaceFolder}",
+          "mode": "debug",
+          "env": {
+            "BITBUCKET_USERNAME": "<username",
+            "BITBUCKET_PASSWORD": "<bitbucket_pass>",
+            "BITBUCKET_SHARED_KEY": "<any_String_as_key>",
+            "DEVELOPMENT_BRANCH_NAME": "master",
+            "RELEASE_BRANCH_PREFIX": "releases/release_",
+            "PORT": "9000"
+          },
+          "program": "${workspaceFolder}",
+  }
+  ]    
+}

@@ -39,3 +39,18 @@ Once you have your app deployed, go [create a Bitbucket Webhook for your reposit
 You can configure it to fire on all the triggers under Pull Request at minimum. For the URL, you should input
 `https://your-deployed-app-url.yourhost.com?key?={BITBUCKET_SHARED_KEY}`. Replace `{BITBUCKET_SHARED_KEY}` by whatever 
 you set for the `BITBUCKET_SHARED_KEY` environment variable. 
+
+## Build
+To build and run locally run VS Code "Run-Cascade" configuration.
+Make sure environment variables are set correctly in launch.json.
+
+## Build Docker Image
+docker build -t bcm .
+
+## Tag and push Docker Image to AWS ECR
+1. Tag: docker tag bcm <xxxxxxxxxxxxxx>.dkr.ecr.ca-central-1.amazonaws.com/bitbucket-cascade-merge
+2. Login: aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin <xxxxxxxxxxxxxx>.dkr.ecr.ca-central-1.amazonaws.com
+3. Push: docker push <xxxxxxxxxxxxxx>.dkr.ecr.ca-central-1.amazonaws.com/bitbucket-cascade-merge  
+
+
+
